@@ -10,7 +10,7 @@ function App() {
 
   const handleCurrentTime = () => {
     setInterval(() => {
-     setCurrentTime(moment().format('h:mm:ss A'))
+      setCurrentTime(moment().format('h:mm:ss A'))
     }, 1000);
   }
 
@@ -23,24 +23,30 @@ function App() {
 
 
   return (
-    <div className="margin-lock">
-      <div>
-        <h2>Metro Transit</h2>
-        <p>Show operator your ticket</p>
-      </div>
-      <div className="center">
-        <img onClick={handleExp} src={icon} id="icon"></img>
-      </div>
     <div>
-      <h1 className="center-text">{currentTime}</h1>
-      <div id="footer">
-        <p id="f-1">Adult / Non-Rush Hour Fare</p>
-        <p id="f-2">Minneapolis/St Paul Metro Area</p>
-        <p id="f-3">Expires {expDateTime}</p>
+      <div id="top" className="right-align-text">
+        <h3>x</h3>
+      </div>
+      <div className="margin-lock">
+        <div>
+          <h2>Metro Transit</h2>
+          <p>Show operator your ticket</p>
+        </div>
+        <div className="center">
+          <img onClick={handleExp} src={icon} id="icon"></img>
+        </div>
+        <div>
+          <h1 className="center-text">{currentTime}</h1>
+          <div id="footer">
+            <p id="f-1">Adult / Non-Rush Hour Fare</p>
+            <p id="f-2">Minneapolis/St Paul Metro Area</p>
+            <p id="f-3">Expires {expDateTime}</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    </div>
   );
 }
 
