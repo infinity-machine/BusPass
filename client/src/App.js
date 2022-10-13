@@ -6,17 +6,22 @@ import moment from 'moment'
 function App() {
 
   const [currentTime, setCurrentTime] = useState('')
-  const [expDateTime, setExpDateTime] = useState('EXP TIME/DATE HERE')
+  const [expDateTime, setExpDateTime] = useState('')
 
   const handleCurrentTime = () => {
     setInterval(() => {
      setCurrentTime(moment().format('h:mm:ss A'))
-    }, 1000)
+    }, 1000);
   }
 
+  const handleExp = () => {
+    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'))
+    console.log('hey')
+  }
 
+  useEffect(handleCurrentTime, []);
+  useEffect(handleExp, [])
 
-  useEffect(handleCurrentTime, [])
 
   return (
     <div className="margin-lock">
@@ -25,7 +30,7 @@ function App() {
         <p>Show operator your ticket</p>
       </div>
       <div className="center">
-        <img src={icon} id="icon"></img>
+        <img onClick={handleExp} src={icon} id="icon"></img>
       </div>
     <div>
       <h1 className="center-text">{currentTime}</h1>
