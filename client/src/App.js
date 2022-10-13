@@ -16,7 +16,6 @@ function App() {
 
   const handleExp = () => {
     setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'))
-    console.log('hey')
   }
 
   useEffect(handleCurrentTime, []);
