@@ -30,7 +30,7 @@ function App() {
     <div>
       <h1 className="center-text">{currentTime}</h1>
       <div id="footer">
-        <p id="f-1">Adult / Non-Rush Hour Faree</p>
+        <p id="f-1">Adult / Non-Rush Hour Fare</p>
         <p id="f-2">Minneapolis/St Paul Metro Area</p>
         <p id="f-3">Expires {expDateTime}</p>
       </div>
