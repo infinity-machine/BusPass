@@ -25,9 +25,9 @@ function App() {
   return (
     <div>
       <div id="top" className="right-align-text">
-        <h3>x</h3>
+        <h3 id="x">x</h3>
       </div>
-      <div className="margin-lock">
+      <div className="container margin-lock">
         <div>
           <h2>Metro Transit</h2>
           <p>Show operator your ticket</p>
