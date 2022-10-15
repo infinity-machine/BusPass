@@ -7,6 +7,7 @@ function App() {
 
   const [currentTime, setCurrentTime] = useState('')
   const [expDateTime, setExpDateTime] = useState('')
+  const [rushStatus, setRushStatus] = useState('Non-Rush')
 
   const handleCurrentTime = () => {
     setInterval(() => {
@@ -16,6 +17,11 @@ function App() {
 
   const handleExp = () => {
     setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'))
+  }
+
+  const handleRush = () => {
+    if (rushStatus === 'Non-Rush') setRushStatus('Rush');
+    if (rushStatus === 'Rush') setRushStatus('Non-Rush');
   }
 
   useEffect(handleCurrentTime, []);
@@ -33,12 +39,12 @@ function App() {
           <p>Show operator your ticket</p>
         </div>
         <div className="center">
-          <img onClick={handleExp} src={icon} id="icon"></img>
+          <img onClick={handleRush} src={icon} id="icon" alt="icon"></img>
         </div>
         <div>
           <h1 className="center-text">{currentTime}</h1>
           <div id="footer">
-            <p id="f-1">Adult / Non-Rush Hour Fare</p>
+            <p id="f-1">Adult / {rushStatus} Hour Fare</p>
             <p id="f-2">Minneapolis/St Paul Metro Area</p>
             <p id="f-3">Expires {expDateTime}</p>
           </div>
