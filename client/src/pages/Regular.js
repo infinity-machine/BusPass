@@ -4,27 +4,37 @@ import icon from '../assets/gif/bus-graphic.gif';
 import moment from 'moment'
 
 const Regular = () => {
-  const [currentTime, setCurrentTime] = useState('')
-  const [expDateTime, setExpDateTime] = useState('')
-  const [rushStatus, setRushStatus] = useState('Non-Rush')
+  const [currentTime, setCurrentTime] = useState('');
+  const [digitTime, setDigitTime] = useState('');
+  const [expDateTime, setExpDateTime] = useState('');
+  const [rushStatus, setRushStatus] = useState('');
 
-  const handleCurrentTime = () => {
+  const handleTime = () => {
     setInterval(() => {
-      setCurrentTime(moment().format('h:mm:ss A'))
+      setCurrentTime(moment().format('h:mm:ss A'));
+      setDigitTime(moment().format('Hm'));
+      const is_rush = isRush();
+      if (is_rush) setRushStatus('Rush');
+      if(!is_rush) setRushStatus('Non-Rush');
     }, 1000);
-  }
+  };
 
   const handleExp = () => {
-    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'))
-  }
+    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
+  };
 
-  const handleRush = () => {
-    if (rushStatus === 'Non-Rush') setRushStatus('Rush');
-    if (rushStatus === 'Rush') setRushStatus('Non-Rush');
-  }
+  const handleReload = () => {
+    window.location.reload();
+  };
 
-  useEffect(handleCurrentTime, []);
-  useEffect(handleExp, [])
+  const isRush = () => {
+    if (digitTime > 600 && digitTime < 901) return true;
+    if (digitTime > 1500 && digitTime < 1831) return true;
+    else return false
+  };
+
+  useEffect(handleTime);
+  useEffect(handleExp, [currentTime]);
 
   return (
     <div>
@@ -37,12 +47,12 @@ const Regular = () => {
           <p>Show operator your ticket</p>
         </div>
         <div className="center">
-          <img onClick={handleRush} src={icon} id="icon" alt="icon"></img>
+          <img src={icon} id="icon" alt="icon"></img>
         </div>
         <div>
           <h1 className="center-text">{currentTime}</h1>
           <div id="footer">
-            <p id="f-1">Adult / {rushStatus} Hour Fare</p>
+            <p id="f-1">Adult / {rushStatus ? rushStatus : '...'} Hour Fare</p>
             <p id="f-2">Minneapolis/St Paul Metro Area</p>
             <p id="f-3">Expires {expDateTime}</p>
           </div>
@@ -50,7 +60,7 @@ const Regular = () => {
 
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Regular
