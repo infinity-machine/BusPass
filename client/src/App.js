@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function App() {
 
   return (
-    <div>
+    <div className="container margin-lock center-text">
       <div>
         <h1>Welcome to BusPass!!!</h1>
         <p>Because paying for the bus is for chumps!</p>

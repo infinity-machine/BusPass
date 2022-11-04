@@ -50,9 +50,9 @@ const Regular = () => {
           <img onClick={handleReload} src={icon} id="icon" alt="icon"></img>
         </div>
         <div>
-          <h1 className="center-text">{currentTime}</h1>
+          <h1 className="center-text">{currentTime ? currentTime : '...loading...'}</h1>
           <div id="footer">
-            <p id="f-1">Adult / {rushStatus ? rushStatus : '...'} Hour Fare</p>
+            <p id="f-1">Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
             <p id="f-2">Minneapolis/St Paul Metro Area</p>
             <p id="f-3">Expires {expDateTime}</p>
           </div>
