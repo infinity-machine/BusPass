@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import icon from '../assets/gif/bus-graphic.gif';
 import moment from 'moment'
 
-const Regular = () => {
+const Ticket = () => {
   const [currentTime, setCurrentTime] = useState('');
   const [digitTime, setDigitTime] = useState('');
   const [expDateTime, setExpDateTime] = useState('');
@@ -63,4 +63,4 @@ const Regular = () => {
   );
 };
 
-export default Regular
+export default Ticket
