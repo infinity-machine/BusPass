@@ -43,11 +43,11 @@ const Regular = () => {
       </div>
       <div className="container margin-lock">
         <div>
-          <h2>Metro Transit</h2>
-          <p>Show operator your ticket</p>
+          <h2 id="h-1">Metro Transit</h2>
+          <p id="h-2">Show operator your ticket</p>
         </div>
         <div className="center">
-          <img src={icon} id="icon" alt="icon"></img>
+          <img onClick={handleReload} src={icon} id="icon" alt="icon"></img>
         </div>
         <div>
           <h1 className="center-text">{currentTime}</h1>
