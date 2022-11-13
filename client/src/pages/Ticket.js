@@ -5,19 +5,26 @@ import moment from 'moment'
 
 const Ticket = () => {
   const [currentTime, setCurrentTime] = useState('');
+  const [currentDay, setCurrentDay] = useState('');
   const [digitTime, setDigitTime] = useState('');
   const [expDateTime, setExpDateTime] = useState('');
   const [rushStatus, setRushStatus] = useState('');
 
   const handleTime = () => {
     setInterval(() => {
+      console.log('hello')
       setCurrentTime(moment().format('h:mm:ss A'));
+      setCurrentDay(moment().format('dddd'));
       setDigitTime(moment().format('Hm'));
-      const is_rush = isRush();
-      if (is_rush) setRushStatus('Rush');
-      if(!is_rush) setRushStatus('Non-Rush');
+      handleRush()
     }, 1000);
   };
+
+  const handleRush = () => {
+    const is_rush = isRush();
+    if (is_rush) setRushStatus('Rush');
+    if (!is_rush) setRushStatus('Non-Rush');
+  }
 
   const handleExp = () => {
     setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
@@ -28,12 +35,14 @@ const Ticket = () => {
   };
 
   const isRush = () => {
+    if (currentDay === 'Saturday' || currentDay === 'Sunday') return false;
     if (digitTime > 600 && digitTime < 901) return true;
     if (digitTime > 1500 && digitTime < 1831) return true;
-    else return false
+    return false;
+
   };
 
-  useEffect(handleTime);
+  useEffect(handleTime, []);
   useEffect(handleExp, [currentTime]);
 
   return (
