@@ -12,7 +12,6 @@ const Ticket = () => {
 
   const handleTime = () => {
     setInterval(() => {
-      console.log('hello')
       setCurrentTime(moment().format('h:mm:ss A'));
       setCurrentDay(moment().format('dddd'));
       setDigitTime(moment().format('Hm'));
