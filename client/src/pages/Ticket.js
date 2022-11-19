@@ -5,44 +5,33 @@ import moment from 'moment'
 
 const Ticket = () => {
   const [currentTime, setCurrentTime] = useState('');
-  const [currentDay, setCurrentDay] = useState('');
-  const [digitTime, setDigitTime] = useState('');
   const [expDateTime, setExpDateTime] = useState('');
   const [rushStatus, setRushStatus] = useState('');
 
   const handleTime = () => {
     setInterval(() => {
       setCurrentTime(moment().format('h:mm:ss A'));
-      setCurrentDay(moment().format('dddd'));
-      setDigitTime(moment().format('Hm'));
-      handleRush()
     }, 1000);
   };
 
   const handleRush = () => {
-    const is_rush = isRush();
-    if (is_rush) setRushStatus('Rush');
-    if (!is_rush) setRushStatus('Non-Rush');
-  }
-
-  const handleExp = () => {
-    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
+    const current_day = moment().format('dddd');
+    const digit_time = moment().format('Hm');
+    if (current_day === 'Saturday' || current_day === 'Sunday') return 'Non-Rush';
+    if (digit_time > 600 && digit_time < 901) return 'Rush';
+    if (digit_time > 1500 && digit_time < 1831) return 'Rush';
+    return 'Non-Rush';
   };
+
+  useEffect(() => {
+    handleTime();
+    setRushStatus(handleRush());
+    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
+  }, []);
 
   const handleReload = () => {
     window.location.reload();
   };
-
-  const isRush = () => {
-    if (currentDay === 'Saturday' || currentDay === 'Sunday') return false;
-    if (digitTime > 600 && digitTime < 901) return true;
-    if (digitTime > 1500 && digitTime < 1831) return true;
-    return false;
-
-  };
-
-  useEffect(handleTime, []);
-  useEffect(handleExp, [currentTime]);
 
   return (
     <div>
@@ -60,6 +49,7 @@ const Ticket = () => {
         <div>
           <h1 className="center-text">{currentTime ? currentTime : '...loading...'}</h1>
           <div id="footer">
+            <p></p>
             <p id="f-1">Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
             <p id="f-2">Minneapolis/St Paul Metro Area</p>
             <p id="f-3">Expires {expDateTime}</p>
@@ -71,4 +61,4 @@ const Ticket = () => {
   );
 };
 
-export default Ticket
+export default Ticket;
