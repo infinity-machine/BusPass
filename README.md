@@ -4,5 +4,5 @@
 ## INSTRUCTIONS
 Simply start the application to render a ticket. If ticket expires, click the middle button to refresh. Happy trails!!
 
-# DEPLOYMENT
+### DEPLOYMENT
 [BUSPASS](https://bus-pass-uhgd6.ondigitalocean.app/)
