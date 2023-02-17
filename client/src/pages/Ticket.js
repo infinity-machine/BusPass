@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import icon from '../assets/gif/bus-graphic.gif';
+import icon from '../assets/gif/bus_icon2.gif';
 import moment from 'moment'
 
 const Ticket = () => {
