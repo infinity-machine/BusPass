@@ -51,7 +51,7 @@ const Ticket = () => {
           <div id="footer">
             <p></p>
             <p id="f-1">Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
-            <p id="f-2">Minneapolis/St Paul Metro Area</p>
+            <p id="f-2">Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
             <p id="f-3">Expires {expDateTime}</p>
           </div>
         </div>
