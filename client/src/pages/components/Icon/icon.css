@@ -3,8 +3,8 @@
 }
 
 #dot1 {
-    height: 12em;
-    width: 12em;
+    height: 9em;
+    width: 9em;
     background-color: red;
     border-radius: 50%;
     animation: dot1_transform 5s infinite
@@ -12,8 +12,8 @@
 
 #dot2 {
     position: absolute;
-    height: 14em;
-    width: 14em;
+    height: 11em;
+    width: 11em;
     background-color: grey;
     opacity: 40%;
     border-radius: 50%;
@@ -22,77 +22,77 @@
 
 #dot3 {
     position: absolute;
-    height: 10em;
-    width: 10em;
+    height: 7em;
+    width: 7em;
     background-color: white;
     border-radius: 50%;
 }
 
 #goto_img {
     position: absolute;
-    height: 5em;
+    height: 3.5em;
 }
 
 @keyframes dot1_transform {
     16.67% {
-        height: 14em;
-        width: 14em;
+        height: 11em;
+        width: 11em;
     }
 
     33.33% {
-        height: 12em;
-        width: 12em;
+        height: 9em;
+        width: 9em;
     }
 
     50% {
-        height: 15em;
-        width: 15em;
+        height: 12em;
+        width: 12em;
     }
 
     66.67% {
-        height: 12em;
-        width: 12em;
+        height: 7.5em;
+        width: 7.5em;
     }
 
     83.33% {
-        height: 16em;
-        width: 16em;
+        height: 13em;
+        width: 13em;
     }
 
     100% {
-        height: 12em;
-        width: 12em;
+        height: 9em;
+        width: 9em;
     }
 }
 
 @keyframes dot2_transform {
     16.67% {
-        height: 10em;
-        width: 10em;
+        height: 7em;
+        width: 7em;
     }
 
     33.33% {
-        height: 11em;
-        width: 11em;
+        height: 8em;
+        width: 8em;
     }
 
     50% {
-        height: 10em;
-        width: 10em;
+        height: 7em;
+        width: 7em;
     }
 
     66.67% {
-        height: 12em;
-        width: 12em;
+        height: 9em;
+        width: 9em;
     }
 
     83.33% {
-        height: 10em;
-        width: 10em;
+        height: 7em;
+        width: 7em;
     }
 
     100% {
-        height: 14em;
-        width: 14em;
+        height: 10em;
+        width: 10em;
     }
 }

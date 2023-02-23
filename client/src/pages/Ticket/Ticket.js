@@ -11,10 +11,10 @@ const Ticket = () => {
     <div>
       < Header />
       <div className="margin_lock">
-      <div id="headline">
-        <h1>Metro Transit</h1>
-        <p>Show operator your ticket</p>
-      </div>
+        <div id="headline">
+          <h1>Metro Transit</h1>
+          <p>Show operator your ticket</p>
+        </div>
         < Icon />
         < Clock />
         < Footer />
