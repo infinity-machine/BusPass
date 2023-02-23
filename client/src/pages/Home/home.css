@@ -1,0 +1,17 @@
+#home_container {
+    height: 100vh;
+}
+
+#select_form {
+    font-size: 1.5em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#render_btn{
+    margin-top: 1em;
+    font-size: 1.25em;
+}
