@@ -3,9 +3,9 @@ import Clock from '../components/Clock/Clock';
 import Icon from '../components/Icon/Icon';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import './ticket.css'
+import './express.css'
 
-const Ticket = () => {
+const Express = () => {
   return (
     <div>
       < Header />
@@ -16,10 +16,13 @@ const Ticket = () => {
         </div>
         < Icon />
         < Clock />
-        < Footer express={false}/>
+        <div id="express">
+            <h2 className="txt_center">Express</h2>
+        </div>
+        < Footer express={true}/>
       </div>
     </div>
   );
 };
 
-export default Ticket;
+export default Express;
