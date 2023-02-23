@@ -1,21 +1,20 @@
 import React from 'react';
-import Clock from '../components/Clock/Clock';
-import Icon from '../components/Icon/Icon';
 import Header from '../components/Header/Header';
+import Headline from '../components/Headline/Headline';
+import Icon from '../components/Icon/Icon';
+import Clock from '../components/Clock/Clock';
+// import ExpressIcon from '../components/ExpressIcon/ExpressIcon';
 import Footer from '../components/Footer/Footer';
-import './ticket.css'
 
 const Ticket = () => {
   return (
     <div>
       < Header />
       <div className="margin_lock">
-        <div id="headline">
-          <h1>Metro Transit</h1>
-          <p>Show operator your ticket</p>
-        </div>
+        < Headline />
         < Icon />
         < Clock />
+        {/* < ExpressIcon /> */}
         < Footer express={false}/>
       </div>
     </div>
