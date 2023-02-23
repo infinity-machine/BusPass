@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import icon from '../assets/gif/bus_icon2.gif';
-import moment from 'moment'
+import goto from '../img/goto_icon.png';
+import moment from 'moment';
 
 const Ticket = () => {
   const [currentTime, setCurrentTime] = useState('');
-  const [expDateTime, setExpDateTime] = useState('');
+  const [expTime, setExpTime] = useState('');
   const [rushStatus, setRushStatus] = useState('');
 
   const handleTime = () => {
@@ -26,7 +26,7 @@ const Ticket = () => {
   useEffect(() => {
     handleTime();
     setRushStatus(handleRush());
-    setExpDateTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
+    setExpTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
   }, []);
 
   const handleReload = () => {
@@ -44,18 +44,19 @@ const Ticket = () => {
           <p id="h-2">Show operator your ticket</p>
         </div>
         <div className="center">
-          <img onClick={handleReload} src={icon} id="icon" alt="icon"></img>
+          <div id="dot1"></div>
+          <div id="dot2"></div>
+          <div id="dot3"></div>
+          <img id="goto" src={goto} alt="BUS ICON"></img>
         </div>
         <div>
           <h1 className="center-text">{currentTime ? currentTime : '...loading...'}</h1>
           <div id="footer">
-            <p></p>
             <p id="f-1">Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
             <p id="f-2">Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
-            <p id="f-3">Expires {expDateTime}</p>
+            <p id="f-3">Expires {expTime}</p>
           </div>
         </div>
-
       </div>
     </div>
   );
