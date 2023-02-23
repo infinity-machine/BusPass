@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import moment from 'moment';
+import './footer.css';
 
 const Footer = () => {
     const [expTime, setExpTime] = useState('');
@@ -21,9 +22,9 @@ const Footer = () => {
 
     return (
         <div id="footer">
-            <p id="f-1">Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
-            <p id="f-2">Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
-            <p id="f-3">Expires {expTime}</p>
+            <p>Adult / {rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
+            <p>Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
+            <p>Expires {expTime}</p>
         </div>
     )
 }

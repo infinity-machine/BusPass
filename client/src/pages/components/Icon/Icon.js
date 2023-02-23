@@ -1,10 +1,11 @@
 import React from 'react'
-import goto from '../../img/goto_icon.png';
-import '../../index.css'
+import goto from '../../../img/goto_icon.png';
+import '../../../index.css'
 import './icon.css';
 
 const Icon = () => {
     // ADD RELOAD HANDLER
+    // MAKE ICON SMALLER
     return (
         <div className="">
         <div id="icon_container" className="flex_container flex_center">
