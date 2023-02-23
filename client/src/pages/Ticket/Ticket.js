@@ -9,20 +9,19 @@ import Footer from '../components/Footer/Footer';
 const Ticket = (props) => {
   return (
     <div>
-      < Header setTicketSelected={props.setTicketSelected} />
+      < Header
+        setTicketSelected={props.setTicketSelected} />
       <div className="margin_lock">
         < Headline />
         < Icon />
         < Clock />
         {
-          props.ticketSelected === 'express' ? (
-            < ExpressIcon />
-          ) : <></>
+          props.ticketSelected === 'express' ? < ExpressIcon /> : <></>
         }
-
-        < Footer express={
-          props.ticketSelected === 'express' ? true : false
-        } />
+        < Footer
+          express={
+            props.ticketSelected === 'express' ? true : false
+          } />
       </div>
     </div>
   );

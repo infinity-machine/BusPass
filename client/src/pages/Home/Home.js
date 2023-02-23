@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Home = (props) => {
     const [inputValue, setInputValue] = useState(null);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         props.setTicketSelected(inputValue)
@@ -12,10 +13,15 @@ const Home = (props) => {
     };
 
   return (
-    <form onChange={handleValueChange} onSubmit={handleSubmit}>
-        <input type="radio" value="regular" name="ticket_select"></input>
+    <form onChange={handleValueChange} 
+            onSubmit={handleSubmit}>
+        <input type="radio" 
+                value="regular" 
+                name="ticket_select"/>
         <label>REGULAR</label>
-        <input type="radio" value="express" name="ticket_select"></input>
+        <input type="radio" 
+                value="express" 
+                name="ticket_select"/>
         <label>EXPRESS</label>
         <button>RENDER TICKET</button>
     </form>

@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect} from 'react';
 import moment from 'moment';
 import './footer.css';
 
 const Footer = (props) => {
     const [expTime, setExpTime] = useState('');
     const [rushStatus, setRushStatus] = useState('');
-    const [isExpress, setIsExpress] = useState(null)
+    const [isExpress, setIsExpress] = useState(null);
 
     const handleRush = () => {
         const current_day = moment().format('dddd');
@@ -17,7 +17,7 @@ const Footer = (props) => {
     };
 
     useEffect(() => {
-        setIsExpress(props.express)
+        setIsExpress(props.express);
         setRushStatus(handleRush());
         setExpTime(moment().add(2, 'h').add(17, 'm').format('LLL'));
     }, []);
@@ -28,7 +28,7 @@ const Footer = (props) => {
             <p>Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
             <p>Expires {expTime}</p>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -15,7 +15,7 @@ const Header = (props) => {
     <div id="header" className="txt_right">
         <p onClick={handleBack}>x</p>
       </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

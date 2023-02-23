@@ -6,7 +6,7 @@ const ExpressIcon = () => {
         <div id="express">
             <h2 className="txt_center">Express</h2>
         </div>
-    )
-}
+    );
+};
 
 export default ExpressIcon;
