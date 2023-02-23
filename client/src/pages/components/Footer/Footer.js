@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import './footer.css';
 
@@ -22,9 +22,11 @@ const Footer = (props) => {
 
     return (
         <div id="footer">
-            <p>Adult / {props.express ? 'Express / ' : ''}{rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
-            <p>Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
-            <p>Expires {expTime}</p>
+            <div>
+                <p>Adult / {props.express ? 'Express / ' : ''}{rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
+                <p>Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
+            </div>
+            <p id="expiration">Expires {expTime}</p>
         </div>
     );
 };
