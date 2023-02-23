@@ -4,12 +4,7 @@ import './header.css';
 
 const Header = (props) => {
   const handleBack = (e) => {
-
-    // WHY THIS NOT WORK?
-    e.stopPropagation();
-    //
-
-    props.setTicketSelected(false)
+    props.setTicketSelected(null)
   }
   return (
     <div id="header" className="txt_right">
