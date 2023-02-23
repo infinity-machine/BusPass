@@ -1,0 +1,98 @@
+#icon_container {
+    height: 20em;
+}
+
+#dot1 {
+    height: 12em;
+    width: 12em;
+    background-color: red;
+    border-radius: 50%;
+    animation: dot1_transform 5s infinite
+}
+
+#dot2 {
+    position: absolute;
+    height: 14em;
+    width: 14em;
+    background-color: grey;
+    opacity: 40%;
+    border-radius: 50%;
+    animation: dot2_transform 5s infinite;
+}
+
+#dot3 {
+    position: absolute;
+    height: 10em;
+    width: 10em;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#goto_img {
+    position: absolute;
+    height: 5em;
+}
+
+@keyframes dot1_transform {
+    16.67% {
+        height: 14em;
+        width: 14em;
+    }
+
+    33.33% {
+        height: 12em;
+        width: 12em;
+    }
+
+    50% {
+        height: 15em;
+        width: 15em;
+    }
+
+    66.67% {
+        height: 12em;
+        width: 12em;
+    }
+
+    83.33% {
+        height: 16em;
+        width: 16em;
+    }
+
+    100% {
+        height: 12em;
+        width: 12em;
+    }
+}
+
+@keyframes dot2_transform {
+    16.67% {
+        height: 10em;
+        width: 10em;
+    }
+
+    33.33% {
+        height: 11em;
+        width: 11em;
+    }
+
+    50% {
+        height: 10em;
+        width: 10em;
+    }
+
+    66.67% {
+        height: 12em;
+        width: 12em;
+    }
+
+    83.33% {
+        height: 10em;
+        width: 10em;
+    }
+
+    100% {
+        height: 14em;
+        width: 14em;
+    }
+}
