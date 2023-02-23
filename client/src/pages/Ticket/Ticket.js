@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
 import Clock from '../components/Clock/Clock';
 import Icon from '../components/Icon/Icon';
 import Header from '../components/Header/Header';
