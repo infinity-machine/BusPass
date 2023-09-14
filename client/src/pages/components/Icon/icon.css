@@ -5,7 +5,7 @@
 #dot1 {
     height: 9em;
     width: 9em;
-    background-color: red;
+    background-color: rgb(114, 188, 244);
     border-radius: 50%;
     animation: dot1_transform 5s infinite
 }

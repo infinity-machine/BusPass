@@ -9,10 +9,10 @@ const Footer = (props) => {
     const handleRush = () => {
         const current_day = moment().format('dddd');
         const digit_time = moment().format('Hm');
-        if (current_day === 'Saturday' || current_day === 'Sunday') return 'Non-Rush';
-        if (digit_time > 600 && digit_time < 901) return 'Rush';
-        if (digit_time > 1500 && digit_time < 1831) return 'Rush';
-        return 'Non-Rush';
+        if (current_day === 'Saturday' || current_day === 'Sunday') return 'Non-Rush Hour';
+        if (digit_time > 600 && digit_time < 901) return 'Rush Hour / M-F 6-9am and 3-6:30pm';
+        if (digit_time > 1500 && digit_time < 1831) return 'Rush Hour / M-F 6-9am and 3-6:30pm';
+        return 'Non-Rush Hour';
     };
 
     useEffect(() => {
@@ -23,8 +23,8 @@ const Footer = (props) => {
     return (
         <div id="footer">
             <div>
-                <p>Adult / {props.express ? 'Express / ' : ''}{rushStatus ? rushStatus : '...loading...'} Hour Fare</p>
-                <p>Minneapolis/&#226;&#9633;&#9633;St. Paul Metro Area</p>
+                <p>Adult / {props.express ? 'Express / ' : ''}{rushStatus ? rushStatus : '...loading...'}</p>
+                <p>Minneapolis/St. Paul</p>
             </div>
             <p id="expiration">Expires {expTime}</p>
         </div>
